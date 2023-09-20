@@ -1,0 +1,29 @@
+POST http://localhost:8080/api/v1/sign-up
+Content-Type: application/json
+
+{
+  "username": "qwerty",
+  "name": "Roman",
+  "password": "qwertyQ11",
+  "verifyPassword": "qwertyQ11"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth
+Content-Type: application/json
+
+{
+  "username": "qwerty",
+  "password": "qwertyQ11"
+}
+
+###
+
+GET http://localhost:8080/api/v1/numbers/next
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE2OTU4MjMyNjgsIm5hbWUiOiJSb21hbiIsInVzZXJuYW1lIjoicXdlcnR5Iiwicm9sZXMiOlsiVVNFUiJdfQ.Fjx9w0WFOrFftjBGqYmos4cJNx6Rkmjd7OlEeL9c06cbuGJSRYPqV-zgFpAjBo6PaWFaBrD1WAmAdTbJCMBEvw
+
+###
+
+GET http://localhost:8080/api/v1/numbers/random
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE2OTU4MjMyNjgsIm5hbWUiOiJSb21hbiIsInVzZXJuYW1lIjoicXdlcnR5Iiwicm9sZXMiOlsiVVNFUiJdfQ.Fjx9w0WFOrFftjBGqYmos4cJNx6Rkmjd7OlEeL9c06cbuGJSRYPqV-zgFpAjBo6PaWFaBrD1WAmAdTbJCMBEvw

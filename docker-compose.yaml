@@ -1,0 +1,39 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    image: app
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+    environment:
+      - "MONGODB_HOST=mongodb"
+      - "MONGODB_PORT=27017"
+      - "MONGODB_NAME=policeman"
+      - "JWT_SECRET=P7iJCxDNB0q0rP0UIBQqoT8wXuA1NZ8abqNXm5AFTMbbimG5sgFkpyrzQQJEnXxGA94id6ZvUn8cEJR0NBRU5A=="
+    networks:
+      - policeman-network
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=policeman
+    networks:
+      - policeman-network
+
+volumes:
+  mongodb-data:
+
+networks:
+  policeman-network:
